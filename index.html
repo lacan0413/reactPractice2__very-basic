@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+</head>
+
+<body>
+
+    <ul id="root"></ul>
+    <ul id="root2"></ul>
+
+
+
+
+
+    <script>
+
+        const render1 = React.createElement(
+            "ul",
+            null,
+            React.createElement("li", null, "1 apple"),
+            React.createElement("li", null, "2 banana"),
+            React.createElement("li", null, "3 child"),
+            React.createElement("li", null, "4 noodles"),
+            React.createElement("li", null, "5 teeth"),
+        );
+
+        const items = [
+            "a apple",
+            "b banana",
+            "c child",
+            "d noodles",
+            "e teeth"
+        ];
+
+        const render2 = React.createElement(
+            "ul",
+            { className: "ingredients" },
+            items.map((ingredient, i) => React.createElement("li", { key: i }, ingredient))
+        );
+
+        ReactDOM.render(render1, document.getElementById("root"))
+        ReactDOM.render(render2, document.getElementById("root2"))
+
+
+    </script>
+</body>
+
+</html>
